@@ -20,21 +20,31 @@
    if(Serial.available()){
      usbRead = Serial.read();  
      Serial.println(usbRead);
+  
      if(usbRead == 'a'){
+       throttle.write(78);
        steering.write(70);
        //usbRead = 0; 
      }  
      else if(usbRead == 'c'){
        throttle.write(90);
+       steering.write(109);
      }
      else if(usbRead == 'd'){
-      throttle.write(135);
+      throttle.write(83);
+      steering.write(109);
      }
      else if(usbRead == 'b'){
+      throttle.write(82);
       steering.write(130);
      }
-     delay(1000);
+     //delay(1000);
    } //end of serial.available
+   
+   //else{
+     //throttle.write(90);
+   //}
+   
  } //end of loop()
  
  /*
